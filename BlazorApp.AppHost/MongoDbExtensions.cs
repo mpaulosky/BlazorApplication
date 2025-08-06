@@ -7,8 +7,6 @@
 // Project Name :  AppHost
 // =======================================================
 
-using static BlazorApp.Shared.Services;
-
 namespace AppHost;
 
 /// <summary>

@@ -7,11 +7,6 @@
 // Project Name :  AppHost
 // =======================================================
 
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Logging;
-
-using StackExchange.Redis;
 
 namespace AppHost;
 
@@ -30,11 +25,11 @@ internal static class RedisResourceBuilderExtensions
 				context => OnRunClearCacheCommandAsync(builder, context),
 				commandOptions: new CommandOptions
 				{
-						IconName = "AnimalRabbitOff",
-						IconVariant = IconVariant.Filled,
-						UpdateState = OnUpdateResourceState,
-						ConfirmationMessage = "Are you sure you want to clear the cache?",
-						Description = "This command will clear all cached data in the Redis cache.",
+					IconName = "AnimalRabbitOff",
+					IconVariant = IconVariant.Filled,
+					UpdateState = OnUpdateResourceState,
+					ConfirmationMessage = "Are you sure you want to clear the cache?",
+					Description = "This command will clear all cached data in the Redis cache.",
 				}
 		);
 
@@ -65,16 +60,16 @@ internal static class RedisResourceBuilderExtensions
 	{
 
 		var logger = context.ServiceProvider.GetRequiredService<ILogger<Program>>();
-		
+
 		if (logger.IsEnabled(LogLevel.Information))
 		{
 			logger.LogInformation("Updating resource state: {ResourceSnapshot}", context.ResourceSnapshot);
 		}
-		
+
 		return context.ResourceSnapshot.HealthStatus is HealthStatus.Healthy
 			? ResourceCommandState.Enabled
 			: ResourceCommandState.Disabled;
-		
+
 	}
 
 }
