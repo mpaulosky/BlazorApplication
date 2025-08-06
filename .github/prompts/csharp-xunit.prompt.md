@@ -21,7 +21,7 @@ Your goal is to help me write effective unit tests with XUnit v3, covering both 
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
   	<PackageReference Include="xunit.v3" />
     <PackageReference Include="xunit.v3.core" />
-    <PackageReference Include="xunit.v3.commo9n" />
+    <PackageReference Include="xunit.v3.common" />
     <PackageReference Include="xunit.v3.runner.visualstudio" />
   	<PackageReference Include="xunit.v3.extensibility.core" />
     <PackageReference Include="FluentAssertions" />
