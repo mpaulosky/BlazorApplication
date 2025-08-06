@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/files/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="codecov.yml" />
+    <File Path="global.json" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="BlazorApp.AppHost/BlazorApp.AppHost.csproj" />
+  <Project Path="BlazorApp.ServiceDefaults/BlazorApp.ServiceDefaults.csproj" />
+  <Project Path="BlazorApp.Shared/BlazorApp.Shared.csproj" />
+  <Project Path="BlazorApp.Tests/BlazorApp.Tests.csproj" />
+  <Project Path="BlazorApp.Web/BlazorApp.Web.csproj" />
+</Solution>
