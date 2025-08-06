@@ -1,3 +1,6 @@
+// AppHost.cs: Configures distributed application resources for BlazorApp.
+// Resource names are provided via global usings from BlazorApp.Shared.Services.
+
 using AppHost;
 
 var builder = DistributedApplication.CreateBuilder(args);
@@ -16,9 +19,10 @@ var cache = builder.AddRedis(CACHE)
 		.WithLifetime(ContainerLifetime.Persistent);
 
 // Add a composite command that coordinates multiple operations
-var api = builder.AddProject<Projects.Web>(WEBSITE)
+var api = builder.AddProject<Projects.BlazorApp_Web>(WEBSITE)
 		.WithExternalHttpEndpoints()
 		.WithHttpHealthCheck("/health")
+		.WithHttpHealthCheck("/redis-health")
 		.WithReference(database).WaitFor(database)
 		.WithReference(cache).WaitFor(cache)
 		.WithEnvironment("auth0-domain", auth0Domain)
