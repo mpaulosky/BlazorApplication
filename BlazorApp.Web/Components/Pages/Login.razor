@@ -1,0 +1,35 @@
+@page "/login"
+@using Microsoft.AspNetCore.Authentication
+@using Auth0.AspNetCore.Authentication
+
+<PageTitle>Login - BlazorApp</PageTitle>
+
+<h1>Login</h1>
+
+<p>Click the button below to log in:</p>
+
+<form method="post" action="/login">
+    <input type="hidden" name="returnUrl" value="@ReturnUrl" />
+    <button type="submit" class="btn btn-primary">Log In</button>
+</form>
+
+@code {
+    [SupplyParameterFromQuery]
+    public string? ReturnUrl { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // If user is already authenticated, redirect them
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        if (authState.User.Identity?.IsAuthenticated == true)
+        {
+            Navigation.NavigateTo(ReturnUrl ?? "/");
+        }
+    }
+
+    [Inject]
+    public AuthenticationStateProvider AuthenticationStateProvider { get; set; } = default!;
+
+    [Inject]
+    public NavigationManager Navigation { get; set; } = default!;
+}
