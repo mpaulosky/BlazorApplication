@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+  "tailwindcss": "^4.1.11"
+  },
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i BlazorApp.Web/wwwroot/css/tailwind.css -o BlazorApp.Web/wwwroot/css/app.css",
+    "watch:css": "npx @tailwindcss/cli -i BlazorApp.Web/wwwroot/css/tailwind.css -o BlazorApp.Web/wwwroot/css/app.css --watch"
+  }
+}
