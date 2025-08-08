@@ -36,8 +36,8 @@ public class WebTests
         await app.StartAsync(cancellationToken).WaitAsync(DefaultTimeout, cancellationToken);
 
         // Act
-        var httpClient = app.CreateHttpClient("webfrontend");
-        await app.ResourceNotifications.WaitForResourceHealthyAsync("webfrontend", cancellationToken).WaitAsync(DefaultTimeout, cancellationToken);
+        var httpClient = app.CreateHttpClient("BlazorApp_Web"); // <-- update resource name
+        await app.ResourceNotifications.WaitForResourceHealthyAsync("BlazorApp_Web", cancellationToken).WaitAsync(DefaultTimeout, cancellationToken); // <-- update resource name
         var response = await httpClient.GetAsync("/", cancellationToken);
 
         // Assert
