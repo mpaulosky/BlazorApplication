@@ -38,6 +38,29 @@ BlazorApp.Tests         -- Unit, integration, and architecture tests (xUnit, bUn
 
 ## Getting Started
 
+### Auth0 Setup
+
+This application uses Auth0 for authentication. To configure Auth0:
+
+1. **Create an Auth0 Application**
+   - Go to [Auth0 Dashboard](https://manage.auth0.com/)
+   - Create a new "Regular Web Application"
+   - Note your Domain and Client ID
+
+2. **Configure Application Settings**
+   - **Allowed Callback URLs**: `https://localhost:7039/callback`
+   - **Allowed Logout URLs**: `https://localhost:7039/`
+   - **Allowed Web Origins**: `https://localhost:7039`
+
+3. **Set User Secrets**
+   ```bash
+   cd BlazorApp.AppHost
+   dotnet user-secrets set "Parameters:auth0-domain" "your-domain.auth0.com"
+   dotnet user-secrets set "Parameters:auth0-client-id" "your-client-id"
+   ```
+
+### Running the Application
+
 1. **Requirements:** .NET 9 SDK, Docker (for MongoDB/Redis/TestContainers), Node.js (for Playwright tests)
 2. **Run the App:**
    - `dotnet run --project BlazorApp.AppHost` (or use Visual Studio/Rider launch)
