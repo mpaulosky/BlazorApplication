@@ -1,29 +1,24 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">BlazorApp</a>
-    </div>
+﻿
+<div class="flex items-center h-16 px-6 bg-blue-700 text-white font-bold text-lg shadow">
+    <a href="" class="hover:text-blue-200">BlazorApp</a>
 </div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill" aria-hidden="true"></span> Home
+<nav class="mt-4">
+    <ul class="space-y-2">
+        <li>
+            <NavLink class="block px-6 py-2 rounded hover:bg-blue-100 text-gray-700" href="" Match="NavLinkMatch.All">
+                <span class="mr-2">🏠</span> Home
             </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill" aria-hidden="true"></span> Counter
+        </li>
+        <li>
+            <NavLink class="block px-6 py-2 rounded hover:bg-blue-100 text-gray-700" href="counter">
+                <span class="mr-2">➕</span> Counter
             </NavLink>
-        </div>
-
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested" aria-hidden="true"></span> Weather
+        </li>
+        <li>
+            <NavLink class="block px-6 py-2 rounded hover:bg-blue-100 text-gray-700" href="weather">
+                <span class="mr-2">📋</span> Weather
             </NavLink>
-        </div>
-    </nav>
-</div>
+        </li>
+    </ul>
+</nav>
